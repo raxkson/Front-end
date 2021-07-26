@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var first = 0;
+        var second = 0;
+        var sign = "";
+        function putNum(n)
+        {
+            var input = document.getElementById("input").innerHTML;
+            document.getElementById("input").innerHTML = input + n;
+        }
+        function clearText()
+        {
+            document.getElementById("input").innerHTML = "";
+        }
+        function sum()
+        {
+            first = document.getElementById("input").innerHTML;
+            document.getElementById("input").innerHTML = "";
+            sign = "+";
+        }
+        function out()
+        {
+            if(sign == "+")
+            {
+                second = document.getElementById("input").innerHTML;
+                document.getElementById("input").innerHTML = parseInt(first) + parseInt(second);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>계산기</h1>
+    <table border="1" width="200px" height="200px">
+        <tr>
+            <td id="input" colspan="4" height="30"></td>
+        </tr>
+        <tr>
+            <td onclick="clearText()">C</td>
+            <td>←</td>
+            <td>+/-</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td onclick="putNum(7)">7</td>
+            <td onclick="putNum(8)">8</td>
+            <td onclick="putNum(9)">9</td>
+            <td>*</td>
+        </tr>
+        <tr>
+            <td onclick="putNum(4)">4</td>
+            <td onclick="putNum(5)">5</td>
+            <td onclick="putNum(6)">6</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td onclick="putNum(1)">1</td>
+            <td onclick="putNum(2)">2</td>
+            <td onclick="putNum(3)">3</td>
+            <td onclick="sum()">+</td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="putNum(0)">0</td>
+            <td>.</td>
+            <td onclick="out()">=</td>
+        </tr>
+
+    </table>
+</body>
+</html>
